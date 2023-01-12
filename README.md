@@ -11,7 +11,7 @@ USERS={
     "tg": "00000000000000000000000000000001"
 }
 ```
-And you most change is to another secret key. In Telegram add "***ee***" to begin of line and add "***676f6f676c652e636f6d***" (google.com) to end of line.
+And you most change it to another secret key with 32 character length. In Telegram add "***ee***" to begin of line and add "***676f6f676c652e636f6d***" (google.com) to end of line.
 4. Create tgproxy user: `useradd --no-create-home -s /usr/sbin/nologin tgproxy`
 5. *(optional, recommended)* install cryptography Python module
 6. *(optional)* install uvloop Python module
