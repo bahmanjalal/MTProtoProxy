@@ -32,11 +32,13 @@
 7. Enable autostarting on boot: `systemctl enable mtprotoproxy`
 8. (optional, start the proxy) `systemctl start mtprotoproxy`
 9. (optional, get a link to share the proxy) `journalctl -u mtprotoproxy | cat`
-
-
+  
+  
+    
 -----------------------------------------------------------------------
-
-
+  
+  
+    
 ***Way 2 :***
 
 Fast and simple to setup MTProto proxy written in Python.
