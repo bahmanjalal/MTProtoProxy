@@ -5,10 +5,17 @@
 
 1. `git clone -b stable https://github.com/alexbers/mtprotoproxy.git /opt/mtprotoproxy; cd /opt/mtprotoproxy`
 2. *(optional, recommended)* edit *config.py*, set **PORT**, **USERS** and **AD_TAG**
-3. Create tgproxy user: `useradd --no-create-home -s /usr/sbin/nologin tgproxy`
-4. *(optional, recommended)* install cryptography Python module
-5. *(optional)* install uvloop Python module
-6. Create file **/etc/systemd/system/mtprotoproxy.service** with the following content:
+3. In *config.py* secret key is :
+```
+USERS={
+    "tg": "00000000000000000000000000000001"
+}
+```
+And you most change is to another secret key. In Telegram add "***ee***" to begin of line and add "***676f6f676c652e636f6d***" (google.com) to end of line.
+4. Create tgproxy user: `useradd --no-create-home -s /usr/sbin/nologin tgproxy`
+5. *(optional, recommended)* install cryptography Python module
+6. *(optional)* install uvloop Python module
+7. Create file **/etc/systemd/system/mtprotoproxy.service** with the following content:
 
 ```
 [Unit]
@@ -29,9 +36,9 @@
 ```
 
 
-7. Enable autostarting on boot: `systemctl enable mtprotoproxy`
-8. (optional, start the proxy) `systemctl start mtprotoproxy`
-9. (optional, get a link to share the proxy) `journalctl -u mtprotoproxy | cat`
+8. Enable autostarting on boot: `systemctl enable mtprotoproxy`
+9. (optional, start the proxy) `systemctl start mtprotoproxy`
+10. (optional, get a link to share the proxy) `journalctl -u mtprotoproxy | cat`
   
   
     
