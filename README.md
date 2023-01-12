@@ -82,7 +82,7 @@ WantedBy=multi-user.target
 
 5. Enable autostarting on boot: `systemctl enable mtp`
 6. (optional, start the proxy) `systemctl start mtp`
-7. (optional, get a link to share the proxy) `journalctl -u mtprotoproxy | cat`
+7. (optional, get a link to share the proxy) `journalctl -u mtp | cat`
   
   
     
