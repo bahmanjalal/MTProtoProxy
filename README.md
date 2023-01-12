@@ -35,7 +35,40 @@ And you most change it to another secret key with 32 character length. In Telegr
 [Install]
     WantedBy=multi-user.target
 ```
+***If not work above code*** do this :
 
+**nano /opt/mtprotoproxy/mt.sh**
+
+add this code :
+
+```
+#!/bin/bash
+/opt/mtprotoproxy/
+sudo python3 mtprotoproxy.py
+```
+then:
+```
+chmod +x /opt/mtprotoproxy/mt.sh
+```
+***Make service file***
+```
+nano /etc/systemd/system/mtp.service
+```
+
+add this :
+
+```
+Description=Description for sample script goes here
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/opt/mtprotoproxy/mt.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
+```
 
 8. Enable autostarting on boot: `systemctl enable mtprotoproxy`
 9. (optional, start the proxy) `systemctl start mtprotoproxy`
