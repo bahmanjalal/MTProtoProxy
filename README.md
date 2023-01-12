@@ -43,7 +43,9 @@ And you most change it to another secret key with 32 character length. In Telegr
 # If not work above code do this : #
 
 
-1. ```nano /opt/mtprotoproxy/mt.sh```
+1.
+
+```nano /opt/mtprotoproxy/mt.sh```
 
 add this code :
 
