@@ -1,4 +1,43 @@
 # Async MTProto Proxy #
+***Way 1 :***
+
+**Autostarting on Boot**
+
+1. `git clone -b stable https://github.com/alexbers/mtprotoproxy.git /opt/mtprotoproxy; cd /opt/mtprotoproxy`
+2. *(optional, recommended)* edit *config.py*, set **PORT**, **USERS** and **AD_TAG**
+3. Create tgproxy user: `useradd --no-create-home -s /usr/sbin/nologin tgproxy`
+4. *(optional, recommended)* install cryptography Python module
+5. *(optional)* install uvloop Python module
+6. Create file **/etc/systemd/system/mtprotoproxy.service** with the following content:
+
+```
+[Unit]
+    Description=Async MTProto proxy for Telegram
+    After=network-online.target
+    Wants=network-online.target
+
+[Service]
+    ExecStart=/opt/mtprotoproxy/mtprotoproxy.py
+    AmbientCapabilities=CAP_NET_BIND_SERVICE
+    LimitNOFILE=infinity
+    User=tgproxy
+    Group=tgproxy
+    Restart=on-failure
+
+[Install]
+    WantedBy=multi-user.target
+```
+
+
+7. Enable autostarting on boot: `systemctl enable mtprotoproxy`
+8. (optional, start the proxy) `systemctl start mtprotoproxy`
+9. (optional, get a link to share the proxy) `journalctl -u mtprotoproxy | cat`
+
+
+-----------------------------------------------------------------------
+
+
+***Way 2 :***
 
 Fast and simple to setup MTProto proxy written in Python.
 
