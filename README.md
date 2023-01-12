@@ -35,6 +35,12 @@ And you most change it to another secret key with 32 character length. In Telegr
 [Install]
     WantedBy=multi-user.target
 ```
+
+8. Enable autostarting on boot: `systemctl enable mtprotoproxy`
+9. (optional, start the proxy) `systemctl start mtprotoproxy`
+10. (optional, get a link to share the proxy) `journalctl -u mtprotoproxy | cat`
+
+
 ***If not work above code*** do this :
 
 **nano /opt/mtprotoproxy/mt.sh**
@@ -43,7 +49,7 @@ add this code :
 
 ```
 #!/bin/bash
-/opt/mtprotoproxy/
+cd /opt/mtprotoproxy/
 sudo python3 mtprotoproxy.py
 ```
 then:
@@ -70,8 +76,8 @@ RemainAfterExit=yes
 WantedBy=multi-user.target
 ```
 
-8. Enable autostarting on boot: `systemctl enable mtprotoproxy`
-9. (optional, start the proxy) `systemctl start mtprotoproxy`
+8. Enable autostarting on boot: `systemctl enable mtp`
+9. (optional, start the proxy) `systemctl start mtp`
 10. (optional, get a link to share the proxy) `journalctl -u mtprotoproxy | cat`
   
   
