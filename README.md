@@ -40,10 +40,11 @@ And you most change it to another secret key with 32 character length. In Telegr
 9. (optional, start the proxy) `systemctl start mtprotoproxy`
 10. (optional, get a link to share the proxy) `journalctl -u mtprotoproxy | cat`
 
+# If not work above code do this : #
 
-#If not work above code do this :#
 
-1. **nano /opt/mtprotoproxy/mt.sh**
+
+```nano /opt/mtprotoproxy/mt.sh```
 
 add this code :
 
