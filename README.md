@@ -3,7 +3,9 @@
 
 **Autostarting on Boot**
 
-1. `git clone -b stable https://github.com/bahmanjalal/mtprotoproxy.git /opt/mtprotoproxy; cd /opt/mtprotoproxy`
+1. ```
+git clone -b stable https://github.com/bahmanjalal/mtprotoproxy.git /opt/mtprotoproxy; cd /opt/mtprotoproxy
+```
 2. *(optional, recommended)* edit *config.py*, set **PORT**, **USERS** and **AD_TAG**
 3. In *config.py* secret key is :
 ```
